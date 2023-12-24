@@ -1,0 +1,24 @@
+body,
+html {
+    margin: 0;
+}
+
+.navbar {
+    background: linear-gradient(to right, #E6E2F3, #AED9E0);
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    padding: 10px;
+    align-self: center;
+    width: 400px;
+}
+
+.search-bar input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0%;
+}

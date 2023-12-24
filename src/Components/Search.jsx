@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { useSynonymSuggestions } from './api'
 
 export default function Search({ onSearch }) {
     const [synonymWord, setSynonymWord] = useState('');
+    const { data: suggestedWord } = useSynonymSuggestions(synonymWord);
 
     const handleSearch = () => {
         onSearch(synonymWord);
@@ -21,7 +23,15 @@ export default function Search({ onSearch }) {
                 onChange={e => setSynonymWord(e.target.value)}
                 onKeyPress={handleKeyPress}
             />
+            <button onClick={handleSearch}>Search</button>
 
+            {suggestedWord && (
+                <ul>
+                    {suggestedWord.map((word) => (
+                        <li key={word.word}>{word.word}</li>
+                    ))}
+                </ul>
+            )}
         </div>
     );
 }
