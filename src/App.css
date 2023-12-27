@@ -22,3 +22,29 @@ html {
     box-sizing: border-box;
     border-radius: 0%;
 }
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 16vh;
+    align-items: center;
+
+}
+
+.synonym-container {
+    margin-top: 90px;
+    text-align: center;
+}
+
+.app .synonym-container h2 {
+    margin-right: 900px;
+}
+
+.content-container {
+    margin-top: 70px;
+}
+
+.synonym-container ul {
+    list-style-type: none;
+
+}

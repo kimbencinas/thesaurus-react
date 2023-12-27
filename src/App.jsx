@@ -23,12 +23,14 @@ export default function App() {
             <div className="app">
                 <Navbar onSearch={handleSearch} />
                 <div className="content-container">
-                    <h2>Synonyms:</h2>
-                    <ul>
-                        {synonyms.map((synonym) => (
-                            <li key={synonym.word}>{synonym.word}</li>
-                        ))}
-                    </ul>
+                    <div className="synonym-container">
+                        <h2>Synonyms:</h2>
+                        <ul>
+                            {synonyms.map((synonym) => (
+                                <li key={synonym.word}>{synonym.word}</li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </QueryClientProvider>
