@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSynonymSuggestions } from './api'
 
 export default function Search({ onSearch }) {
     const [synonymWord, setSynonymWord] = useState('');
-    const { data: suggestedWord } = useSynonymSuggestions(synonymWord);
+    const { data: suggestedWord, refetch } = useSynonymSuggestions(synonymWord);
 
     const handleSearch = () => {
         onSearch(synonymWord);
+        setSynonymWord('');
     };
 
     const handleKeyPress = (event) => {
@@ -14,6 +15,15 @@ export default function Search({ onSearch }) {
             handleSearch();
         }
     }
+
+    useEffect(() => {
+        const fetchSuggestions = async () => {
+            if (synonymWord === '') {
+                await refetch();
+            }
+        };
+        fetchSuggestions();
+    }, [synonymWord, refetch]);
 
     return (
         <div className="search-bar">

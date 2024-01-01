@@ -14,13 +14,18 @@ html {
 .search-bar {
     padding: 10px;
     align-self: center;
-    width: 400px;
+    margin: 0 auto;
 }
 
 .search-bar input {
-    width: 100%;
+    flex: 1;
     box-sizing: border-box;
     border-radius: 0%;
+    width: 500px;
+}
+
+.search-bar button {
+    margin-left: 0px;
 }
 
 .app {
@@ -32,7 +37,7 @@ html {
 }
 
 .synonym-container {
-    margin-top: 90px;
+    margin-top: 150px;
     text-align: center;
 }
 
